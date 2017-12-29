@@ -1,0 +1,3 @@
+# UNDER DEVELOPMENT
+# r16n
+I18n for Redux

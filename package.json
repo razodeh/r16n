@@ -1,0 +1,39 @@
+{
+  "name": "r16n",
+  "version": "1.0.0",
+  "description": "Redux internationalization bindings. This library provides components for (React, Vue, and Angular), and APIs to (format, translate, pluralize) strings, dates, and numbers.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razodeh/r16n.git"
+  },
+  "keywords": [
+    "i18n",
+    "internationalization",
+    "intl",
+    "localization",
+    "globalization",
+    "translation",
+    "locale",
+    "l10n",
+    "format",
+    "react",
+    "vue",
+    "angular",
+    "vuejs",
+    "reactjs",
+    "angularjs"
+  ],
+  "author": "Radwan Abu-Odeh <radwanizzat@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/razodeh/r16n/issues"
+  },
+  "homepage": "https://github.com/razodeh/r16n#readme"
+}
