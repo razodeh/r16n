@@ -1,0 +1,46 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:jest/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+        "no-console": 0,
+        "eol-last": [
+            2,
+            "always"
+        ],
+        "eqeqeq": [
+            2,
+            "smart"
+        ],
+        "semi-spacing": [
+            2,
+            {
+                "before": false,
+                "after": true
+            }
+        ],
+        "require-jsdoc": [2, {
+            "require": {
+                "FunctionDeclaration": true,
+                "MethodDefinition": true,
+                "ClassDeclaration": true
+            }
+        }]
+    },
+    "plugins": [
+        "react",
+        "jest",
+        "import"
+    ]
+}

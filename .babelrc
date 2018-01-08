@@ -1,0 +1,12 @@
+{
+    "presets": [
+        "env",
+        "react",
+        "jest"
+    ],
+    "plugins": [
+        "transform-object-rest-spread"
+    ],
+    "env": {
+    }
+}

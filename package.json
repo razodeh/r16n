@@ -1,13 +1,18 @@
 {
   "name": "r16n",
   "version": "1.0.0",
-  "description": "Redux internationalization bindings. This library provides components for (React, Vue, and Angular), and APIs to (format, translate, pluralize) strings, dates, and numbers.",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "Redux internationalization bindings. This library provides components for (React), and APIs to (format, translate, pluralize) strings, dates, and numbers.",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "examples"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Unit Tests are not impolemented yet.\"",
+    "test:lint": "eslint src",
+    "build": "babel src -d dist",
+    "build:watch": "npm run build -- --watch",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
@@ -24,16 +29,44 @@
     "l10n",
     "format",
     "react",
-    "vue",
-    "angular",
-    "vuejs",
-    "reactjs",
-    "angularjs"
+    "reactjs"
   ],
   "author": "Radwan Abu-Odeh <radwanizzat@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/razodeh/r16n/issues"
   },
-  "homepage": "https://github.com/razodeh/r16n#readme"
+  "homepage": "https://github.com/razodeh/r16n#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.1.2",
+    "babel-jest": "^22.0.4",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-jest": "^22.0.3",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.14.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.5.0",
+    "eslint-plugin-react": "^7.5.1",
+    "jest": "^22.0.4",
+    "jest-cli": "^22.0.4",
+    "react-dom": "^16.2.0",
+    "rimraf": "^2.6.2",
+    "sinon": "^4.1.3",
+    "teaspoon": "^6.6.0"
+  },
+  "dependencies": {
+    "intl": "^1.2.5",
+    "intl-locales-supported": "^1.0.0",
+    "moment": "^2.20.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  }
 }
