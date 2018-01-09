@@ -87,7 +87,7 @@ export default connect(mapStateToProps, ...)(/*Your Component*/);
 > The same works on every locale you provide.
 
 #### `getTranslations(state)`:
-Returns the current translation object, just in case you needed it :stuck_out_tongue:
+Returns the current translations object, just in case you needed it.
 
 **args** :
 
