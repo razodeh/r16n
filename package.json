@@ -1,7 +1,7 @@
 {
   "name": "r16n",
   "version": "1.0.0",
-  "description": "Redux internationalization bindings. This library provides components for (React), and APIs to (format, translate, pluralize) strings, dates, and numbers.",
+  "description": "Redux internationalization. This library provides Redux reducer to translate strings, and React components to localize dates, and numbers.",
   "main": "dist/index.js",
   "files": [
     "dist",

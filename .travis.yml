@@ -12,7 +12,7 @@ install:
 branches:
   only:
     - master
-    - dev
+    - develop
 
 script:
   - npm run test
