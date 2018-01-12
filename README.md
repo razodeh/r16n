@@ -173,7 +173,9 @@ A binding for `getTranslation(state, key)`
 
 **example**: 
 ```javascript
-import {Translation} from 'r16n/React';
+import {ReactBindings} from 'r16n';
+const {Translation} = ReactBindings;
+
 // ... Inside your component.
 	<Translation tKey='text.apple'/>
 // ...
@@ -190,7 +192,9 @@ Whenever `setLocale(...)` action is called with new locale, it re-renders with t
 
 **example** :
 ```javascript
-import {Date} from 'r16n/React'
+import {ReactBindings} from 'r16n'
+const {Date} = ReactBindings;
+
 // ... Inside your component
 	<Date value={1514908177545} format="gggg-MM-ddd hh:mmA"/> // en-> 2018-01-Tue 05:49PM, ar-> ٢٠١٨-٠١-ثلاثاء ٠٥:٤٩م
 	// Different Formats for each locale.
@@ -206,7 +210,9 @@ A binding for localizing numbers.
 
 **example** :
 ```javascript
-import {Number} from 'r16n/React'
+import {ReactBindings} from 'r16n'
+const {Number} = ReactBindings;
+
 // ... Inside your component
 	<Number value="1"/> // en-> 1, ar-> ١
 	<Number value={23232}/>	// en-> 23,232 ar-> ٢٣٬٢٣٢
