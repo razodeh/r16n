@@ -2,7 +2,7 @@
 
 # Reduxtionalization (Redux I18N) [![Build Status](https://travis-ci.org/razodeh/r16n.svg?branch=master)](https://travis-ci.org/razodeh/r16n) 
 
-[About](#1.-about) | [Installation](#2.-installation) | [Usage](#3.-usage) | [Bindings](#4.-bindings) | [License](#5.-license)
+[About](#1-about) | [Installation](#2-installation) | [Usage](#3-usage) | [Bindings](#4-bindings) | [License](#5-license)
 
 ## 1. About
 
@@ -169,7 +169,7 @@ A binding for `getTranslation(state, key)`
 
 **Props** :
 
- - `tKey` : it is like the `key` attribute for [`getTranslation(...)`](#3.2.1.-get-a-translation)
+ - `tKey` : it is like the `key` attribute for [`getTranslation(...)`](#321-get-a-translation)
 
 **example**: 
 ```javascript
