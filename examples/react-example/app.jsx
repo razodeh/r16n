@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { combineReducers, createStore, compose } from 'redux';
 import { connect, Provider } from 'react-redux';
-import {createR16nReducer, setLocale, getLocale, getTranslation} from '../../dist';
-import {Number, Date} from '../../dist/React';
-const Translation = require('../../dist/React').Translation;
+import {createR16nReducer, setLocale, getLocale, getTranslation} from 'r16n';
+import {Number, Date} from 'r16n/React';
+const Translation = require('r16n/React').Translation;
 
 const locales = {
     en: {

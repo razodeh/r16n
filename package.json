@@ -2,7 +2,7 @@
   "name": "r16n",
   "version": "1.0.1",
   "description": "Redux internationalization. This library provides Redux reducer to translate strings, and React components to localize dates, and numbers.",
-  "main": "dist/index.js",
+  "main": "dist",
   "files": [
     "dist",
     "examples"
@@ -12,7 +12,8 @@
     "test:lint": "eslint src",
     "build": "babel src -d dist",
     "build:watch": "npm run build -- --watch",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
