@@ -2,9 +2,18 @@
 
 # Reduxtionalization (Redux I18N) [![Build Status](https://travis-ci.org/razodeh/r16n.svg?branch=master)](https://travis-ci.org/razodeh/r16n) 
 
-[Installation](#installation) | [Usage](#usage) | [Bindings](#bindings)
+[About](#1.-about) | [Installation](#2.-installation) | [Usage](#3.-usage) | [Bindings](#4.-bindings) | [License](#5.-license)
 
-## Installation
+## 1. About
+
+R16N is a simple easy-to-use redux (reducer, action, and state selectors) for your 
+translations, and localized dates and number, which you are going to use throughout 
+your app.
+
+> R16N also has bindings for React.
+> There will be new bindings for different Front-End JS frameworks.
+
+## 2. Installation
 Using npm:
 ```
 npm install r16n
@@ -14,9 +23,9 @@ Using yarn:
 yarn add r16n
 ```
 
-## Usage
+## 3. Usage
 
-### 1. Create R16N Reducer
+### 3.1. Creating R16N reducer
 Create R16N reducer with your own locales, and the current locale.
 
 ```javascript
@@ -51,10 +60,10 @@ const reducers = combineReducers({
 ```
 > R16N's reducer name has to be `r16n`, otherwise it won't work.
 
-### 2. Select Your Translations
+### 3.2. Working with your translations
 
-#### `getTranslation(state, key)`:
-Returns the translation state of the requested key, and count.
+#### 3.2.1. Get a translation:
+To get a translation state from redux, call `getTranslation(state, key)`
 **args** :
 
  - `state` : Redux store state.
@@ -70,6 +79,12 @@ If your locales object was the following:
 		}
 	},
 	// ... other locales.
+	ar:{
+		dummyKey: 'ترجمة بلا فائدة',
+		nestedKey: {
+			anotherKey: 'ترجمة اخرى'
+		}
+	}
 }
 ```
 `dummyKey`, and `nestedKey.anotherKey` are valid translation keys.
@@ -80,14 +95,15 @@ import {getTranslation} from 'r16n';
 // ...
 const mapStateToProps = (state) => ({
 	// ...
-    appleText: getTranslation(state, 'navbar.home'), // en-> Home, ar-> الرئيسية
+    appleText: getTranslation(state, 'nestedKey.anotherKey'), 
+    	// en-> Another Translation, ar-> ترجمة اخرى
 });
 export default connect(mapStateToProps, ...)(/*Your Component*/);
 ```
 > The same works on every locale you provide.
 
-#### `getTranslations(state)`:
-Returns the current translations object, just in case you needed it.
+#### 3.2.2. Get current translations state:
+To get the entire current translations state in case you needed it, call `getTranslations(state)`.
 
 **args** :
 
@@ -104,10 +120,10 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, ...)(/*Your Component*/);
 ```
 
-#### `getLocale(state)`:
-Returns the current locale state of the app.
+#### 3.2.3. Get current locale state:
+To get the current locale state of the app, call `getLocale(state)`.
 
-**args**:
+**args** :
 
  - `state` : Redux store state
 
@@ -123,7 +139,7 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, ...)(/*Your Component*/);
 ```
 
-### 3. Change Your App's locale
+### 3.3. Change your app's locale
 ####  `setLocale(locale)`:
 Sets the locale code you've passed and its translations as the current translations and locale of your app.
 
@@ -143,17 +159,17 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(..., mapDispatchToProps)(/*Your Component*/);
 ```
 
-## Bindings
-### React
+## 4. Bindings
+### 4.1. React
 The following are React Components that are already connected to with **R16N**.
 > Whenever `setLocale(...)` action is called with new locale, they re-render with the localized value.
 
-#### Translation
+#### 4.1.1. Translation
 A binding for `getTranslation(state, key)`
 
 **Props** :
 
- - `tKey` : it is like the `key` attribute for [`getTranslation(...)`](#getTranslation)
+ - `tKey` : it is like the `key` attribute for [`getTranslation(...)`](#3.2.1.-get-a-translation)
 
 **example**: 
 ```javascript
@@ -162,7 +178,7 @@ import {Translation} from 'r16n/React';
 	<Translation tKey='text.apple'/>
 // ...
 ```
-#### Date
+#### 4.1.2. Date
 A binding for localizing dates, it uses [`Moment.js`](https://momentjs.com/) for formatting and translating dates.
 
 Whenever `setLocale(...)` action is called with new locale, it re-renders with the localized date.
@@ -181,7 +197,7 @@ import {Date} from 'r16n/React'
 	<Date value="2018-01-09T19:09:33+02:00" format={{en:"gggg-MM-d hh:mmA", ar: "gggg-MM-d ddd hh:mmA"}}/> // en-> 2018-01-2 07:09PM, ar-> ٢٠١٨-٠١-٢ ثلاثاء ٠٧:٠٩م
 // ...
 ```
-#### Number
+#### 4.1.3. Number
 A binding for localizing numbers. 
 
 **Props** :
@@ -198,5 +214,5 @@ import {Number} from 'r16n/React'
 ```
 
 #### [React Example](./examples/react-example)
-## License
-MIT
+## 5. License
+The MIT License (MIT) Copyright (c) 2018 Radwan Abu Odeh radwanizzat[at]gmail.com
