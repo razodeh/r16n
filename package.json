@@ -1,6 +1,6 @@
 {
   "name": "r16n",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Redux internationalization. This library provides Redux reducer to translate strings, and React components to localize dates, and numbers.",
   "main": "dist",
   "files": [
