@@ -64,6 +64,7 @@ const reducers = combineReducers({
 
 #### 3.2.1. Get a translation:
 To get a translation state from redux, call `getTranslation(state, key)`
+
 **args** :
 
  - `state` : Redux store state.
@@ -146,6 +147,8 @@ Sets the locale code you've passed and its translations as the current translati
 **example** :
 
 ```javascript
+import {setLocale} from 'r16n';
+
 // Your Component
 const SomeComponent = (props) => 
 	<div>
