@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { combineReducers, createStore, compose } from 'redux';
 import { connect, Provider } from 'react-redux';
-import {createR16nReducer, setLocale, getLocale, getTranslation} from '../../dist';
-import {Number, Date} from '../../dist/React';
-const Translation = require('../../dist/React').Translation;
+import { createR16nReducer, setLocale, getLocale, getTranslation, ReactBindings } from 'r16n';
+const { Translation, Number, Date } = ReactBindings;
 
 const locales = {
     en: {
@@ -48,7 +47,6 @@ const App = ({ text, locale, setLocale, r16nStore, dummyText }) =>
         <button onClick={() => setLocale('en')}>
             En
         </button>
-        
         <h1>
             {locale} -> {text}
         </h1>
@@ -58,14 +56,14 @@ const App = ({ text, locale, setLocale, r16nStore, dummyText }) =>
         <hr />
         <h4>Translation</h4>
         <Translation tKey="helloWorld" />
-        <br/>
+        <br />
         <h4>Numbers</h4>
         <Number value="1" />
-        <br/>
+        <br />
         <h4>Dates</h4>
-        <Date value={1514908177545} format="gggg-MM-ddd hh:mmA"/><br/>
-        <Date value="2018-01-09T19:09:33+02:00" format={{ar: "gggg-MM-d ddd hh:mmA"}}/>
-        <br/>
+        <Date value={1514908177545} format="gggg-MM-ddd hh:mmA" /><br />
+        <Date value="2018-01-09T19:09:33+02:00" format={{ ar: "gggg-MM-d ddd hh:mmA" }} />
+        <br />
         <div>
             <h4>Store Structure</h4>
             <pre>

@@ -1,8 +1,9 @@
 # Build Directory
 dist
 
-# Package lock
-package-lock.json
+# Examples Bundled code.
+examples/react-example/app.js
+examples/*/package-lock.json
 
 # Examples Bundled code.
 examples/react-example/app.js
