@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }} / React ${{ matrix.react }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+        react: [18, 19]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Use React ${{ matrix.react }}
+        if: matrix.react != 19
+        run: npm install --no-save react@${{ matrix.react }} react-dom@${{ matrix.react }}
+
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run test:coverage
+      - run: npm run build
+      - run: npm run lint:package
+
+      - name: Smoke test the packed tarball
+        run: npm run test:smoke
+        env:
+          SMOKE_REACT_VERSION: ${{ matrix.react }}
+
+  example:
+    name: Build the React example
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Build examples/react-example against this checkout
+        working-directory: examples/react-example
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
