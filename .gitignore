@@ -1,8 +1,8 @@
 # Build Directory
 dist
 
-# Examples Bundled code.
-examples/react-example/app.js
+# Examples bundled code.
+examples/*/dist
 examples/*/package-lock.json
 
 # Logs
